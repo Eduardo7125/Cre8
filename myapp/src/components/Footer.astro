@@ -1,12 +1,13 @@
 ---
 const links = [
-	{ name: "Twitter", url: "#", icon: "fab fa-twitter" },
-	{ name: "Instagram", url: "#", icon: "fab fa-instagram" },
-	{ name: "Facebook", url: "#", icon: "fab fa-facebook" },
-	{ name: "Github", url: "#", icon: "fab fa-github" },
-	{ name: "Linkedin", url: "#", icon: "fab fa-linkedin" },
+	{ name: "Twitter", url: "#", icon: "fab fa-twitter", hoverColor: "hover:text-blue-400" },
+	{ name: "Instagram", url: "#", icon: "fab fa-instagram", hoverColor: "hover:text-pink-400" },
+	{ name: "Facebook", url: "#", icon: "fab fa-facebook", hoverColor: "hover:text-blue-800" },
+	{ name: "Github", url: "#", icon: "fab fa-github", hoverColor: "hover:text-gray-900" },
+	{ name: "Linkedin", url: "#", icon: "fab fa-linkedin", hoverColor: "hover:text-blue-500" },
 ];
 ---
+
 <footer>
     <div>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus consequatur esse cum possimus, odio enim nobis incidunt repellat explicabo a libero ut repellendus in id earum quas? Quaerat, aspernatur asperiores?
@@ -15,7 +16,11 @@ const links = [
 		<ul class="flex flex-row justify-center gap-6">
 			{links.map(link => (
 				<li>
-					<a href={link.url} target="_blank" class="text-gray-600 hover:text-blue-500 text-2xl">
+					<a 
+						href={link.url} 
+						target="_blank" 
+						class={`text-gray-600 text-2xl ${link.hoverColor}`}
+					>
 						<i class={link.icon}></i> {link.name}
 					</a>
 				</li>
@@ -24,6 +29,7 @@ const links = [
 	</div>
     <span class="flex justify-center">&copy; {new Date().getFullYear()} Eduardo, Liqi and Kader. All rights reserved.</span>
 </footer>
+
 <style>
     footer{
         padding: 2.5rem
