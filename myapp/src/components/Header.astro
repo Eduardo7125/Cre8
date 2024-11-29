@@ -1,0 +1,38 @@
+<header>
+    <nav>
+        <ul class="flex flex-row gap-11 justify-center mt-3 font-bold text-lg">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">What's next</a></li>
+        </ul>
+    </nav>
+</header>
+<style>
+    li {
+        position: relative;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+        padding: 0 5px;
+    }
+
+    li::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition: width 0.3s ease-out;
+    }
+
+    li:hover::after {
+        width: 100%;
+    }
+</style>
